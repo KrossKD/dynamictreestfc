@@ -50,7 +50,7 @@ def generate(rm: ResourceManager):
 
         rm.loot(name, {
             'name': 'tfc:wood/log/%s' % name,
-            'conditions': [func('dynamictrees:multiply_logs_count')]
+            'functions': [func('dynamictrees:multiply_logs_count')]
         }, {
             'name': 'minecraft:stick',
             'functions': [func('dynamictrees:multiply_sticks_count')]
@@ -58,7 +58,7 @@ def generate(rm: ResourceManager):
 
         rm.loot('stripped_%s' % name, {
             'name': 'tfc:wood/stripped_log/%s' % name,
-            'conditions': [func('dynamictrees:multiply_logs_count')]
+            'functions': [func('dynamictrees:multiply_logs_count')]
         }, {
             'name': 'minecraft:stick',
             'functions': [{'function': 'dynamictrees:multiply_sticks_count'}]

@@ -12,29 +12,33 @@ def generate(rm: ResourceManager):
             species(rm, name, tapering=0.15, signal_energy=12, up_probability=0, lowest_branch_height=3, growth_rate=0.7)
         elif name == 'birch':
             species(rm, name, tapering=0.1, signal_energy=14, up_probability=4, lowest_branch_height=4, growth_rate=1.25),
-        elif name == 'sequoia' or name == 'spruce':
-            species(rm, name, tapering=0.25, signal_energy=16, up_probability=3, lowest_branch_height=3, growth_rate=0.9, growth_logic_kit='conifer')
+        elif name == 'sequoia' or name == 'spruce' or 'white_cedar':
+            species(rm, name, tapering=0.25, signal_energy=18, up_probability=4, lowest_branch_height=3, growth_rate=0.9, growth_logic_kit='conifer')
         elif name == 'palm':
             species(rm, name, tapering=0.2, signal_energy=10, growth_rate=0.8, soil_str=2, growth_logic_kit='dttfc:diagonal_palm', soils=['dirt_like', 'sand_like'], spec_type='palm')
         elif name == 'kapok':
             species(rm, name, tapering=0.2, signal_energy=24, up_probability=3, lowest_branch_height=2, growth_rate=1, growth_logic_kit='jungle')
+        elif name == 'willow':
+        	species(rm, name, tapering=0.1, signal_energy=12, upProbability=0, lowest_branch_height=1)
         else:
             species(rm, name)
 
         if name == 'birch':
             family(rm, name, conifer_variants=True)
-        elif name == 'sequoia' or name == 'spruce':
+        elif name == 'sequoia' or name == 'spruce' or 'white_cedar':
             family(rm, name, max_branch_radius=24, conifer_variants=True)
         elif name == 'palm':
             family(rm, name, thickness1=3, thickness2=4, fam_type='dttfc:diagonal_palm')
         elif name == 'kapok':
             family(rm, name, max_branch_radius=24, roots=True, max_signal=64)
+        elif name == 'willow':
+        	family(rm, name, max_branch_radius=20)
         else:
             family(rm, name)
 
         if name == 'acacia':
             leaves_properties(rm, name, cell_kit='dynamictrees:acacia', smother=2)
-        elif name == 'sequoia' or name == 'spruce':
+        elif name == 'sequoia' or name == 'spruce' or 'white_cedar':
             leaves_properties(rm, name, cell_kit='dynamictrees:conifer', smother=3)
         elif name == 'palm':
             leaves_properties(rm, name, cell_kit='dttfc:palm', leaf_type='palm')
